@@ -17,5 +17,5 @@ La simulazione calcola le frequenze di vittoria a seconda della strategia scelta
 - cambiare scelta;
 - scegliere a caso se mantenere o cambiare scelta.
 
-La frequenza di realizzazione di un evento è calcolabile come numero di realizzazioni diviso numero di tentativi effettuati. Queste frequenze tendono a stabilizzarsi su valori precisi, che corrispondono proprio ai valori delle probabilità a priori. 
+La frequenza di realizzazione di un evento è calcolabile come il rapporto tra numero di realizzazioni e numero di tentativi effettuati. Queste frequenze tendono a stabilizzarsi su valori precisi, che corrispondono proprio ai valori delle probabilità a priori. 
 In particolare, le strategie descritte sopra hanno probabilità di vittoria $1 \over 3$, $2 \over 3$ e $1 \over 2$, rispettivamente.
