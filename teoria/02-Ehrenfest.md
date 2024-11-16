@@ -1,6 +1,6 @@
 # Modello di Ehrenfest
 
-Tante volte un problema può essere troppo complicato per una diretta simulazione: vuoi per il gran numero di gradi di libertà coinvolti, vuoi per la intrinseca difficoltà della sua dinamica (ad esempio, instabilità numeriche).
+Tante volte un problema può essere troppo complicato per una simulazione diretta: vuoi per il gran numero di gradi di libertà coinvolti, vuoi per la intrinseca difficoltà della sua dinamica (ad esempio, instabilità numeriche).
 
 In molti casi, questo fatto ci spinge a risolvere un problema più semplice e quindi formulare un _modello_ che ci lasci speranza di arrivare ad una soluzione.
 
