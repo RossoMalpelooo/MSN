@@ -22,4 +22,7 @@ jobs:
           output_dir: teoria
           build_html: false
           table_of_content: true
-      
+      - uses: actions/upload-artifact@v3
+        with:
+          name: docs
+          path: teoria
