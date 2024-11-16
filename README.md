@@ -8,7 +8,7 @@ Guida directory:
 ├── code
 |   └── utils
 ├── teoria
-└── slides
+└── appunti
 ```
 
 ---

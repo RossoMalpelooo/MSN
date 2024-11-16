@@ -1,3 +1,5 @@
+# Problema delle 3 carte
+
 Per iniziare a familiarizzare con il termine *simulazione*, si consideri il famoso [Problema di Monty Hall](https://it.wikipedia.org/wiki/Problema_di_Monty_Hall), rappresentato in questo caso da 3 carte, di cui una sola vincente.
 
 Dopo una prima scelta del giocatore a carte coperte, il mazziere scopre una carta NON vincente tra le carte NON scelte. A questo punto al giocatore viene chiesto se vuole mantenere la sua scelta o cambiarla con l'altra carta rimasta. Quale scelta conviene prendere al giocatore per vincere?
