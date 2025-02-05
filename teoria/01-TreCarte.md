@@ -12,7 +12,7 @@ Uno dei modi per farlo è, infatti, cercare di simulare il problema al calcolato
 
 ### Approccio frequentista
 
-La simulazione calcola le frequenze di vittoria a seconda della strategia scelta dal giocatore, che possiamo riassumere in 3 casi:
+La simulazione calcola le frequenze di vittoria a seconda della strategia scelta dal giocatore, che possiamo riassumere in 3 casi distinti:
 - mantenere la scelta originale;
 - cambiare scelta;
 - scegliere a caso se mantenere o cambiare scelta.
