@@ -57,9 +57,9 @@ jobs:
           ls -la artifacts/pdf
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          name: docs-html
+          name: docs-pdf
           path: artifacts
 
       - name: Commit and Push artifacts
@@ -69,7 +69,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "Add generated artifacts [HTML]"
+            git commit -m "Add generated artifacts [PDF]"
             git push
           fi
         env:
