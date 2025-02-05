@@ -1,0 +1,76 @@
+# .github/workflows/convert-to-pdf.yml
+
+name: Docs to PDF
+# This workflow is triggered on pushes to the repository.
+on:
+  push:
+    branches:
+      - main
+    # Paths can be used to only trigger actions when you have edited certain files, such as a file within the /docs directory
+    paths:
+      - 'teoria/**.md'
+
+jobs:
+  converttopdf:
+    name: Build PDF
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Flatten image directory by copying
+        run: |
+            find teoria/images -type f -name "*.png" -exec cp {} teoria/images/ \;
+            find teoria/images -type f -name "*.jpg" -exec cp {} teoria/images/ \;
+            find teoria/images -type f -name "*.jpeg" -exec cp {} teoria/images/ \;
+            find teoria/images -type f -name "*.gif" -exec cp {} teoria/images/ \;
+            find teoria/images -type f -name "*.svg" -exec cp {} teoria/images/ \;
+            ls -la teoria/images
+      
+      - name: Preprocess Obsidian Markdown
+        run: |
+          find teoria -type f -name "*.md" -exec sed -i 's/!\[\[\(.*\)\]\]/![\1](images\/\1)/g' {} +
+          find teoria -type f -name "*.md" -exec sed -i '/table-of-contents/{N;d;}' {} +
+
+        # https://github.com/BaileyJM02/markdown-to-pdf
+      - name: Convert Markdown to PDF
+        uses: baileyjm02/markdown-to-pdf@v1
+        with:
+          input_dir: teoria
+          output_dir: tmp/
+          images_dir: teoria/images/**
+          build_pdf: true
+          build_html: false
+          table_of_contents: true
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+
+      - name: Refactor artifacts
+        run: |
+          ls -la
+          ls -la tmp
+          mkdir -p artifacts/pdf
+          cp tmp/*.pdf artifacts/pdf/ || echo "No PDF files to copy"
+          ls -la artifacts/pdf
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: docs-pdf
+          path: artifacts
+
+      - name: Commit and Push artifacts
+        run: |
+          git pull
+          git add artifacts/
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Add generated artifacts [PDF]"
+            git push
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

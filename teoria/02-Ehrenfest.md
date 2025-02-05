@@ -1,4 +1,6 @@
-Tante volte un problema può essere troppo complicato per una diretta simulazione: vuoi per il gran numero di gradi di libertà coinvolti, vuoi per la intrinseca difficoltà della sua dinamica (ad esempio, instabilità numeriche).
+# Modello di Ehrenfest
+
+Tante volte un problema può essere troppo complicato per una simulazione diretta: vuoi per il gran numero di gradi di libertà coinvolti, vuoi per la intrinseca difficoltà della sua dinamica (ad esempio, instabilità numeriche).
 
 In molti casi, questo fatto ci spinge a risolvere un problema più semplice e quindi formulare un _modello_ che ci lasci speranza di arrivare ad una soluzione.
 
@@ -101,6 +103,6 @@ $$ \rho(x) = 2^{-N} \sum_{n=0}^N \binom{N}{n} x^n = \sum_{n=0}^N p_n \, x^n
 Possiamo riscrivere le probabilità $p_n$ in questo modo:
 $$ p_n = \binom{N}{n} \left(\frac{1}{2}\right)^n \left(1 - \frac{1}{2}\right)^{N-n}$$
 Convincendosi di questo, ci si accorge che la formula corrisponde alla _funzione di densità probabilistica_ della [distribuzione binomiale](https://it.wikipedia.org/wiki/Distribuzione_binomiale), ovvero:
-$$\mathcal{B}_{N,\,p}(n) , \; p=\frac{1}{2} $$
-Negli appunti a seguire verrà studiata più nel dettaglio questa distribuzione, con particolare attenzione ai [momenti](https://it.wikipedia.org/wiki/Momento_(probabilit%C3%A0)) e alla relazione con la [matrice stocastica](https://it.wikipedia.org/wiki/Matrice_stocastica) del processo.
+$$ \mathcal{B}_{N,\,p}(n) , \; p=\frac{1}{2} $$
+Negli appunti successivi verrà studiata più nel dettaglio questa distribuzione, con particolare attenzione ai [momenti](https://it.wikipedia.org/wiki/Momento_(probabilit%C3%A0)) e alla relazione con la [matrice stocastica](https://it.wikipedia.org/wiki/Matrice_stocastica) del processo.
 
