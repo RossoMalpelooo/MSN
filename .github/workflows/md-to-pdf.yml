@@ -70,7 +70,6 @@ jobs:
             echo "No changes to commit."
           else
             git commit -m "Add generated artifacts [PDF]"
-            git push
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

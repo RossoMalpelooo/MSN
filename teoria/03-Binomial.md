@@ -26,7 +26,7 @@ Allo stesso modo, per ricavare la varianza si utilizza la derivata seconda parte
 $$ n\,(n-1)\, \left(p+q\right)^{n-2} = \sum_{m=2}^n \binom{n}{m} m \left(m-1\right) \, p^{m-2} q^{n-m} $$
 e si moltiplica per il termine $p^2$ 
 $$ n\,(n-1)\,p^2 \, \left(p+q\right)^{n-2} = \sum_{m=2}^n \binom{n}{m} m \left(m-1\right) \, p^m q^{n-m} $$
-si aggiunge poi il vincolo $p+q=1$
+si aggiunge poi il vincolo $p+q=1$ (per definizione)
 $$ n\,(n-1)\,p^2 = \sum_{m=0}^n m \left(m-1\right) \, \mathcal{B}_{n,p}(m) = \sum_{m=0}^n m^2\,\mathcal{B}_{n,p}(m) - \sum_{m=0}^n m\,\mathcal{B}_{n,p}(m) $$
 $$ n^2p^2 - np^2 = \mathbb{E}\left[m^2\right] - \mathbb{E}\left[m\right] 
 = \left(\mathbb{E}\left[m\right]\right)^2 - np^2 = \mathbb{E}\left[m^2\right] - np
