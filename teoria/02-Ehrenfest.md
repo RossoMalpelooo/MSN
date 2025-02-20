@@ -1,4 +1,4 @@
-# Modello di Ehrenfest
+# 1. Modello di Ehrenfest
 
 Tante volte un problema può essere troppo complicato per una simulazione diretta: vuoi per il gran numero di gradi di libertà coinvolti, vuoi per la intrinseca difficoltà della sua dinamica (ad esempio, instabilità numeriche).
 
@@ -30,7 +30,7 @@ La formulazione di questo modello rende possibile avviare delle simulazioni per 
 
 Queste osservazioni sono compatibili con il modello di partenza (molecole di gas in una stanza) e questo significa che quello utilizzato per la simulazione è un buon modello, essendo in grado di catturare informazioni importanti senza perdere di generalità.
 
-# Distribuzione Stazionaria
+# 2. Distribuzione Stazionaria
 
 Dopo vari esperimenti numerici tramite simulazioni è semplice notare che le frequenze tendono a stabilizzarsi dopo un certo numero di iterazioni. Questa proprietà è indicativa del fatto che esista una _distribuzione di probabilità_ che descriva bene il processo di evoluzione.
 
@@ -47,7 +47,7 @@ La probabilità di trovare $n$ biglie nell'urna $U_r$ al tempo $t+1$ è uguale a
 La probabilità di estrarre una biglia da una delle due urne viene calcolata a priori tramite il rapporto fra _casi favorevoli_ (numero di biglie nell'urna) e _casi totali_ (numero di biglie totali).
 L'equazione di evoluzione temporale risulta quindi:
 $$ P_n(t+1) = P_{n-1}(t) \frac{N-n+1}{N} + P_{n+1}(t) \frac{n+1}{N}$$
-### Funzione generatrice
+## 2.1. Funzione generatrice
 $$ \rho(x, t) = \sum_{n=0}^N P_n(t) \ x^n $$
 Da notare che:
 1. è un polinomio di grado $N$ nella variabile $x$, che era estranea dal problema originario;
